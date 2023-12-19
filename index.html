@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>per la giuggiolina mia</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #ffcccc; /* Colore di sfondo a tema amore */
+    }
+    h1 {
+      color: #ff0080; /* Colore per il titolo */
+      margin-top: 100px;
+      font-size: 36px;
+    }
+    #giuggiola {
+      max-width: 300px;
+      transition: transform 0.3s ease-in-out;
+    }
+    #giuggiola:hover {
+      transform: rotate(5deg);
+    }
+    #link_amore {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff99cc; /* Colore per il link "clicca qui giuggiolina mia" */
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>cliccati</h1>
+  <img id="giuggiola" src="2015-09-24_12.12.04-removebg-preview.png" alt="Giuggiola (frutto)">
+  <script>
+    document.getElementById('giuggiola').addEventListener('click', function() {
+      window.location.href = 'pagina_domande.html';
+    });
+  </script>
+</body>
+</html>

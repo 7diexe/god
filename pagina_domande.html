@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #ffcccc; /* Colore di sfondo a tema amore */
+    }
+    h2 {
+      color: #ff0080; /* Colore per il titolo */
+    }
+    #si_ti_amo_tantissimissimo {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff99cc; /* Colore per l'opzione "Si, Ti amo Tantissimissimo" */
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    #no_ti_amo_poco {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff3333; /* Colore per l'opzione "No, Ti amo poco" */
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: transform 0.5s ease-in-out;
+    }
+    #messaggio_amore {
+      display: block;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    #immagini_amore {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    #immagini_amore img {
+      max-width: 100px;
+      margin: 0 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Mi ami tanto?</h2>
+  <a href="#" id="si_ti_amo_tantissimissimo">Si, Ti amo Tantissimissimo</a>
+  <div id="no_ti_amo_poco">No, Ti amo poco</div>
+  <p id="messaggio_amore"></p>
+  <div id="immagini_amore"></div>
+  <script>
+    document.getElementById('si_ti_amo_tantissimissimo').addEventListener('click', function() {
+      document.getElementById('messaggio_amore').style.display = 'none';
+
+      // Aggiungi un elemento audio quando si clicca su "Si, Ti amo Tantissimissimo"
+      const audioElement = new Audio();
+      audioElement.src = 'yippi.mp3'; // Sostituisci con il percorso del tuo file audio
+      audioElement.autoplay = true;
+      audioElement.loop = true; // Imposta il loop per ripetere continuamente l'audio
+      document.body.appendChild(audioElement);
+
+      // Aggiungi una GIF quando si clicca su "Si, Ti amo Tantissimissimo"
+      const gifElement = document.createElement('img');
+      gifElement.src = 'micioballa.gif'; // Sostituisci con il percorso della tua GIF
+      document.body.appendChild(gifElement);
+
+      // Aggiungi una serie di immagini PNG quando si clicca su "Si, Ti amo Tantissimissimo"
+      const images = [
+        'download.png',
+        'download.png',
+        'download.png'
+        // Aggiungi altri link alle immagini PNG qui se necessario
+      ];
+
+      const imageContainer = document.getElementById('immagini_amore');
+      images.forEach(image => {
+        const imageElement = document.createElement('img');
+        imageElement.src = image;
+        imageContainer.appendChild(imageElement);
+      });
+    });
+
+    // Movimento della scritta "No, Ti amo poco" quando ci si passa sopra con il mouse
+    document.getElementById('no_ti_amo_poco').addEventListener('mouseover', function() {
+      const randomX = Math.random() * (window.innerWidth - this.offsetWidth);
+      const randomY = Math.random() * (window.innerHeight - this.offsetHeight);
+      this.style.position = 'absolute';
+      this.style.left = randomX + 'px';
+      this.style.top = randomY + 'px';
+    });
+  </script>
+</body>
+</html>
